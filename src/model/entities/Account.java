@@ -11,7 +11,7 @@ public class Account {
 
     private Double amount;
 
-    public Account(Integer number, String holder, Double balance, Double withdrawLimit, Double amount) {
+    public Account(Integer number, String holder, Double balance, Double withdrawLimit, Double amount) throws DomainExceptions{
         if (balance < 0) {
             throw new DomainException("Balance cannot be negative");
         }
