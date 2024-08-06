@@ -12,6 +12,12 @@ public class Account {
     private Double amount;
 
     public Account(Integer number, String holder, Double balance, Double withdrawLimit, Double amount) {
+        if (balance < 0) {
+            throw new DomainException("Balance cannot be negative");
+        }
+        if (withdrawLimit < 0) {
+            throw new DomainException("Withdraw limit cannot be negative");
+        }
         this.number = number;
         this.holder = holder;
         this.balance = balance;
